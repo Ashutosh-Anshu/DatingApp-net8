@@ -33,8 +33,6 @@
 
 1. Navigate to the API directory : `cd API`
 
-   ### This command will start the backend API server.
-
 3. **Database Migration**: If this is the first time you are setting up the project or if there are new migrations,
   you need to apply these migrations to your local database. Ensure your database server (e.g., SQLite) is running and then execute : `dotnet ef database update`
 This command will apply any pending migrations to your database.
