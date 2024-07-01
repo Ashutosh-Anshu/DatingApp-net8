@@ -1,0 +1,19 @@
+<div>
+    <button class="btn btn-outline-primary" type="button" (click)="get400Error()">Test 400</button>
+    <button class="btn btn-outline-primary" type="button" (click)="get401Error()">Test 401</button>
+    <button class="btn btn-outline-primary" type="button" (click)="get404Error()">Test 404</button>
+    <button class="btn btn-outline-primary" type="button" (click)="get500Error()">Test 500</button>
+    <button class="btn btn-outline-primary" type="button" (click)="get400ValidationError()">Test validation</button>
+
+
+    @if (validationError.length>0) {
+    <div class="row mt-5">
+        <ul class="text-danger">
+            @for (error of validationError; track $index) {
+            <li>{{error}}</li>
+            }
+        </ul>
+    </div>
+    }
+
+</div>
