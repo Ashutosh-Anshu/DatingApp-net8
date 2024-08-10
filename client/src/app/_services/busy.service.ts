@@ -11,7 +11,7 @@ export class BusyService {
   busy() {
     this.busyRequestCount++;
     this.sppinserService.show(undefined, {
-      type: 'ball-spin-clockwise',
+      // type: 'ball-spin-clockwise',
       bdColor: 'rgba(255,255,255,0)',
       color: '#333333',
       size:'default'
