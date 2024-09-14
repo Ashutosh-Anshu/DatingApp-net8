@@ -43,6 +43,10 @@ public class UsersController : BaseApiController
     public async Task<ActionResult<MemberDto>> GetUser(string username)
     {
         var user = await _userRepository.GetMemberAsync(username);
+        if (user.Photos.Count == 1)
+        {
+            user.PhotoUrl = user.Photos[0].Url;
+        }
         return user == null ? NotFound() : user;
     }
 
@@ -73,6 +77,8 @@ public class UsersController : BaseApiController
             Url = result.SecureUri.AbsoluteUri,
             PublicId = result.PublicId,
         };
+
+        if (user.Photos.Count == 0) photo.IsMain = true;
 
         user.Photos.Add(photo);
 
