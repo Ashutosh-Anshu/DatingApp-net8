@@ -64,7 +64,7 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        Welcome {{ accountService.currentUser()?.username | titlecase }}
+        Welcome {{ accountService.currentUser()?.knownAs }}
       </a>
       <ul class="dropdown-menu">
         <li>

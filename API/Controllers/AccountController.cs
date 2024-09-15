@@ -43,6 +43,7 @@ public class AccountController : BaseApiController
             Username = registerDto.Username,
             Token = _tokenService.CreateToken(user),
             KnowAs = user.KnownAs,
+            Gender = user.Gender
         };
 
     }
@@ -71,6 +72,7 @@ public class AccountController : BaseApiController
             Token = _tokenService.CreateToken(user),
             PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url,
             KnowAs = user.KnownAs,
+            Gender = user.Gender
         };
     }
 }

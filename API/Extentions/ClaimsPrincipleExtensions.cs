@@ -8,11 +8,24 @@ namespace API.Extentions
         {
             try
             {
-                var username = user.FindFirstValue(ClaimTypes.NameIdentifier)
+                var username = user.FindFirstValue(ClaimTypes.Name)
                 ?? throw new Exception("cannot get username from token");
                 return username;
             }
-            catch(Exception ex)
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static int GetUserId(this ClaimsPrincipal user)
+        {
+            try
+            {
+                var userid = int.Parse(user.FindFirstValue(ClaimTypes.NameIdentifier)
+                ?? throw new Exception("cannot get username from token"));
+                return userid;
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }

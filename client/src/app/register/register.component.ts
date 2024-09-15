@@ -68,7 +68,6 @@ export class RegisterComponent implements OnInit {
 
   register() {
     const dob = this.getDateOnly(this.registerForm.get('dateOfBirth')?.value);
-    debugger
     this.registerForm.patchValue({ dateOfBirth: dob });
     this.accountService.register(this.registerForm.value).subscribe({
       next: (_) => this.router.navigateByUrl('/members'),

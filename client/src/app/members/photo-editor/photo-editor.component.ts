@@ -47,7 +47,6 @@ export class PhotoEditorComponent implements OnInit {
     };
 
     this.uploader.onSuccessItem = (item, response, status, headers) => {
-      debugger
       const photo = JSON.parse(response);
       const updatedMember = { ...this.member() };
       updatedMember.photos.push(photo);
@@ -70,7 +69,6 @@ export class PhotoEditorComponent implements OnInit {
   }
 
   setMainPhoto(photo: Photo) {
-    debugger;
     this.memberService.setMainPhoto(photo).subscribe({
       next: (_) => {
         const user = this.accountService.currentUser();
